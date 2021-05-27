@@ -1,0 +1,39 @@
+<%- contentFor('privado') %>
+    <section class="skyrim-bg what">
+        <div class="skyrim-content">
+            <h2>What is this?!</h2>
+        </div>
+    </section>
+    <section class="about">
+        <div class="conty">
+            <p><span class="titler">Who are we?</span>
+                <br>
+                <%- dA.who%>
+            </p>
+            <p><span class="titler">What is our MISSION</span>
+                <br>
+                <%- dA.mission%>
+            </p>
+            <p><span class="titler">What is our VISION?</span>
+                <br>
+                <%- dA.vision%>
+            </p>
+        </div>
+        <%- contentFor('body')%>
+            <div class="jumbotron text-center">
+                <h1>Nosotros Team</h1>
+                <div class="row">
+                    <% for (item of usuarios) { %>
+                        <div class="col-sm-3">
+                            <h2>
+                                <%= item.name%>
+                            </h2>
+                            <img src="<%= item.avatar%>" class="img-fluid">
+                            <h3>
+                                <%= item.email%>
+                            </h3>
+                        </div>
+                        <%} %>
+                </div>
+            </div>
+    </section>

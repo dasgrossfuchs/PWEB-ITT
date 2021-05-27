@@ -1,0 +1,5 @@
+npm init -y
+    inicializacion del paquete de node.
+npm install express body-parser
+npm install express-ejs-layouts
+    instalacion de paquetes express 

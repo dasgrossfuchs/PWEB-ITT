@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://www.flaticon.com/svg/vstatic/svg/164Dos/164Dos564.svg?token=exp=1615677701~hmac=037f0da1389b35fbe9f8be0dfa3ff889">
+    <title>🤔Talbas HTML?🤔</title>
+</head>
+<style>
+    pre code {
+        background-color: #eee;
+        border: 1px solid #999;
+        display: inline-block;
+        padding: Dos0px;
+    }
+
+    table,
+    tr,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .ejemplo {
+        padding: 15px;
+    }
+
+    .clasi {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>Como hacer tablas en HTML?!🤔🤔🤔</h1>
+    <hr>
+    <h3>Estructura basica de una tabla</h3>
+    <p>Una tabla es una estructura compuesta por renglones y columnas, en html se utiliza un contenedor tabla, que esta
+        compuesta por elementos renglon, y a su vez estos renglones estan compuestos por elementos datos.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Resultado</th>
+                <th>Etiquetas</th>
+            </tr>
+        </thead>
+        <tr>
+            <td class="ejemplo">
+                <pre>
+                <code>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt; ~Renglon 1 , Columna 1~ &lt;/td&gt;
+        &lt;td&gt; ~Renglon 1 , Columna 2~ &lt;/td&gt;
+    &lt;tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt; ~Renglon 2 , Columna 1~ &lt;/td&gt;
+        &lt;td&gt; ~Renglon 2 , Columna 2~ &lt;/td&gt;
+    &lt;tr&gt;
+&lt;table&gt;
+                </code>
+            </pre>
+            </td>
+            <td class="ejemplo">
+                <table>
+                    <tr>
+                        <td>~Renglon 1 , Columna 1~</td>
+                        <td>~Renglon 1 , Columna 2~</td>
+                    </tr>
+                    <tr>
+                        <td>~Renglon 2 , Columna 1~</td>
+                        <td>~Renglon 2 , Columna 2~</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <ul>
+                    <li><b>table</b> : Es el contenedor de toda nuestra tabla.</li>
+                    <li><b>tr</b> : 'Table Row' ; Es un renglon dentro de nuestra tabla.</li>
+                    <li><b>td</b> : 'Table Data' ; Es una celda dentro de nuestro renglon.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="ejemplo">Considerando esta jerarquia de elementos podemos crear tablas mas complejas.
+                Ejemplo:</td>
+        </tr>
+        <tr align="center">
+            <td colspan="3" class="ejemplo">
+                <table>
+                    <tr>
+                        <td>Multiplicar</td>
+                        <td>Uno</td>
+                        <td>Dos</td>
+                        <td>Tres</td>
+                    </tr>
+                    <tr>
+                        <td>Uno</td>
+                        <td>Uno</td>
+                        <td>Dos</td>
+                        <td>Tres</td>
+                    </tr>
+                    <tr>
+                        <td>Dos</td>
+                        <td>Dos</td>
+                        <td>Cuatro</td>
+                        <td>Seis</td>
+                    </tr>
+                    <tr>
+                        <td>Tres</td>
+                        <td>Tres</td>
+                        <td>Seis</td>
+                        <td>Nueve</td>
+                    </tr>
+                </table>
+            </td>
+    </table>
+    </tr>
+    <hr>
+
+
+
+    <h3>Encabezados y formato</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Resultado</th>
+                <th>Etiquetas</th>
+            </tr>
+        </thead>
+        <tr>
+            <td class="ejemplo">
+                <pre>
+                    <code>
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th rowspan="2"&gt; Nombre &lt;/th&gt;
+            &lt;th colspan="2"&gt; &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt; Genero &lt;/th&gt;
+            &lt;th&gt; Edad &lt;/th&gt;
+        &lt;/tr&gt; 
+    &lt;/thead&gt;
+    &lt;tr&gt;
+        &lt;td&gt; Juan &lt;/td&gt;
+        &lt;td&gt; Hombre &lt;/td&gt;
+        &lt;td&gt; 15 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt; Ana &lt;/td&gt;
+        &lt;td&gt; Mujer &lt;/td&gt;
+        &lt;td&gt; 17 &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                </code>
+            </pre>
+            </td>
+            <td class="ejemplo">
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Nombre</th>
+                            <th colspan="2">Atributos</th>
+                        </tr>
+                        <tr>
+                            <th>Genero</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Juan</td>
+                        <td>Hombre</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Ana</td>
+                        <td>Mujer</td>
+                        <td>17</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <ul>
+                    <li><b>table :</b> Contenedor de la tabla</li>
+                    <li><b>thead :</b> Contenedor del encabezado</li>
+                    <li><b>tr :</b> Contenedor del renglon</li>
+                    <li><b>th :</b> Encabezado de columna</li>
+                    <li><b>td :</b> Contenido de la celda</li>
+                    <li><b>rowspan :</b> Cantidad de renglones ocupados por la celda</li>
+                    <li><b>colspan :</b> Cantidad de columnas ocupadas por la celda</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="ejemplo">
+                <p>Considerando lo anterior podemos hacer tablas con mas subcategorias o de complejidades mayores, como
+                    es
+                    el caso
+                    del siguiente ejemplo, <br> en el cual se utilizan categorias y subcategorias para demostrar la
+                    clasificacion de
+                    algunos numeros.</p>
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="3" class="ejemplo">
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="6">Numero</th>
+                            <th colspan="8">Clasificación</th>
+                        </tr>
+                        <tr>
+                            <td colspan="7">Real</td>
+                            <td rowspan="5">Imaginario</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">Racional</td>
+                            <td rowspan="5">Irracional</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Entero</td>
+                            <td colspan="3">Fraccionario</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Natural</td>
+                            <td rowspan="2">Negativo</td>
+                            <td rowspan="2">Exacto</td>
+                            <td colspan="2">Periodico</td>
+                        </tr>
+                        <tr>
+                            <td>Primo</td>
+                            <td>Compuesto</td>
+                            <td>Puro</td>
+                            <td>Mixto</td>
+                        </tr>
+                    </thead>
+                    <tr class="clasi">
+                        <td>125i</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>i<sup>15</sup></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>&pi;</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>e</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>1.03<sup>-</sup></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>5.233<sup>-</sup></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>5.3<sup>-</sup></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>1.123123<sup>-</sup></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>1.058</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>5.2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>-258</td>
+                        <td></td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>4</td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>6</td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>8</td>
+                        <td></td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>2</td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>3</td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="clasi">
+                        <td>5</td>
+                        <td>x</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h3>Otros atributos</h3>
+    <p>Al hacer tablas podemos utilizar otros atributos ya sea dentro de las tablas, renglones, encabezados o las celdas
+        individuales para ayudar a dar formato a nuestra informacion. Por ejemplo:</p>
+    <ul>
+        <li>padding : Margen o sangria, espaciado para el contenido o la ubicacion de la tabla.</li>
+        <li>align : Alineacion del contenido dentro de la tabla</li>
+        <li>border : Borde de las celdas</li>
+        <li>style : Para mayor control por medio de CSS</li>
+    </ul>
+</body>
+
+</html>

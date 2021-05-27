@@ -1,0 +1,64 @@
+<%- contentFor('privado') %>
+    <section class="skyrim-bg meet">
+        <div class="skyrim-content">
+            <h2>Send us a message!</h2>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="cont">
+            <p><span class="item">E-mail:</span>
+                <%- cont.email%>
+            </p>
+            <p><span class="item">Phone:</span>
+                <%- cont.phone%>
+            </p>
+            <p><span class="item">Facebook:</span>
+                <%- cont.fb%>
+            </p>
+        </div>
+    </section>
+    <%- contentFor('body')%>
+        <div class="container  content-cont">
+            <form action="/contact" class="form-horizontal" method="POST">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <legend class="text-center h1 header">Deja tus datos.</legend>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                <input type="text" class="form-control" placeholder="Apellido Paterno" name="pname">
+                                <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                <input type="text" class="form-control" placeholder="Apellido Materno" name="mname">
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Nombre" name="fname">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                <input type="date" class="form-control" value="1998-01-01" name="fecha">
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-12 pb-3 text-center">
+                            <button class="btn btn-primary col-6" type="submit"><i class="fa fa-check-circle">
+                                </i> Mandar datos</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="row  ">
+            <div class="col-auto mx-auto">
+                <div class="container  content-cont skyrim-content " style="position: inherit !important;">
+                    <h2><span>RFC: </span><span>
+                            <%- resultanteRFC%>
+                        </span></h2>
+                </div>
+            </div>
+        </div>

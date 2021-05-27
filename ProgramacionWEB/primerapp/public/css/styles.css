@@ -1,0 +1,149 @@
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header .navbar {
+  border-radius: 0;
+  margin: 0;
+}
+
+.hero {
+  background-image: url(../img/Mustang2020.jpg);
+  background-repeat: no-repeat;
+  ;
+  background-size: cover;
+  background-position: center center;
+  padding: 50px 0;
+  min-height: 650px;
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-content h2 {
+  color: #FFF;
+  font-size: 80px;
+}
+
+.hero-content p {
+  color: #FFF;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.hero-content .btn {
+  border-radius: 2px;
+  padding: 20px 30px;
+}
+
+.skyrim-bg {
+  background-image: url(../img/skybg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-clip: border-box;
+  padding: 50px 0;
+  min-height: 300px;
+  position: relative;
+}
+
+.meet {
+  background-image: url(../img/meet.jpg);
+  min-height: 150px;
+}
+
+.what {
+  background-image: url(../img/who.jpg);
+  min-height: 150px;
+}
+
+.skyrim-content {
+  position: absolute;
+  top: 5%;
+  text-align: center;
+  width: 100%;
+  text-shadow: 10px 5px 10px black;
+  color: #FFF;
+}
+
+.skyrim-content h2 {
+  font-size: 80px;
+}
+
+.skyrim-content p {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.skyrim-content .btn {
+  text-shadow: none;
+  border-radius: 2px;
+  padding: 20px 30px;
+}
+
+.contact {
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 15px;
+}
+
+.contact .cont {
+  border-style: solid;
+  padding-left: 25%;
+  background-color: rgba(128, 128, 128, 0.24);
+  font-size: 25px;
+  font-weight: 700;
+  color: rgba(34, 34, 34, 0.692);
+}
+
+.contact .item {
+  color: #222;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.about {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 15px;
+}
+
+.about .conty {
+  text-align: center;
+  border-style: solid;
+  background-color: rgba(128, 128, 128, 0.24);
+  font-size: 25px;
+  font-weight: 700;
+  color: rgba(34, 34, 34, 0.692);
+}
+
+.about .titler {
+  font-size: 30px;
+  color: #222;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main {
+  min-height: 500px;
+  padding: 50px 0;
+}
+
+footer {
+  padding: 30px 0;
+  font-size: 14px;
+  color: #BBB;
+  background: #222;
+  text-align: center;
+}
+
+.content-cont {
+  margin-top: 25px;
+  border-radius: 25px;
+  border: 3px solid rgb(56, 56, 56);
+  background-color: #BBB;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    .carousel-item>img {
+        height: 93%;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="icon" href="./icon2.png">
+    <title>Archivos PDF IS</title>
+</head>
+
+<body>
+    <div style="padding-inline: 20%;">
+        <h1 class="display-4 text-center" id="form">Documento con object</h1>
+        <object style="width: 100%; height:600px ;" data="./IS.pdf" type="application/pdf" />
+        </object>
+        <h1 class="display-4 text-center" id="form">Documento con embed</h1>
+        <embed style="width: 100%; height: 600px;" src="./IS.pdf" type="application/pdf" />
+        <h1 class="display-4 text-center" id="form">Documento con iframe</h1>
+        <br>
+        <iframe style="width: 100%; height: 600px;" id="iframepdf" src="./IS.PDF"></iframe>
+    </div>
+
+</body>
+
+</html>

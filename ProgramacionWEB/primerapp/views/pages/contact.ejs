@@ -18,9 +18,9 @@
         </div>
     </section>
     <%- contentFor('body')%>
-        <div class="container  content-cont">
-            <form action="/contact" class="form-horizontal" method="POST">
-                <fieldset>
+        <fieldset>
+            <div class="container  content-cont">
+                <form action="/contact" class="form-horizontal" method="POST">
                     <div class="row">
                         <div class="col-md-12">
                             <legend class="text-center h1 header">Deja tus datos.</legend>
@@ -46,19 +46,83 @@
                         </div>
                         <div class="col-2"></div>
                         <div class="col-12 pb-3 text-center">
-                            <button class="btn btn-primary col-6" type="submit"><i class="fa fa-check-circle">
+                            <button name="butt1" class="btn btn-primary col-6" type="submit"><i class="fa fa-check-circle">
                                 </i> Mandar datos</button>
                         </div>
                     </div>
-                </fieldset>
-            </form>
-        </div>
-        <div class="row  ">
-            <div class="col-auto mx-auto">
-                <div class="container  content-cont skyrim-content " style="position: inherit !important;">
-                    <h2><span>RFC: </span><span>
+                </form>
+            </div>
+            <div class="row  ">
+                <div class="col-auto mx-auto">
+                    <div class="container  content-cont skyrim-content " style="position: inherit !important;">
+                        <h2><span>RFC: </span><span>
                             <%- resultanteRFC%>
                         </span></h2>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="container  content-cont">
+                <form action="/contact" class="form-horizontal" method="POST">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <legend class="text-center h1 header">Generar CURP.</legend>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                <input type="text" class="form-control" placeholder="Apellido Paterno" name="pnameC">
+                                <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                                <input type="text" class="form-control" placeholder="Apellido Materno" name="mnameC">
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Nombre" name="fnameC">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                <input type="date" class="form-control" value="1998-01-01" name="fechaC">
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-2"></div>
+                        <div class="col-4">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" placeholder="Estado de nacimiento" name="edoC">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" value="H" type="radio" name="genC" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Hombre
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" value="M" type="radio" name="genC" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Mujer
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-12 pb-3 text-center">
+                        <button class="btn btn-primary col-6" type="submit"><i class="fa fa-check-circle">
+                                </i> Mandar datos</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-auto mx-auto">
+                    <div class="container  content-cont skyrim-content " style="position: inherit !important;">
+                        <h2><span>CURP: </span><span>
+                            <%- resultanteCURP%>
+                        </span></h2>
+                    </div>
+                </div>
+            </div>
+        </fieldset>

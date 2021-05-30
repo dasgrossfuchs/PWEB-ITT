@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%- title%>
+    </title>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/4f3c6f3a48.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<script>
+    function clock() {
+        var hoy = new Date();
+        var h = hoy.getHours();
+        var m = hoy.getMinutes();
+        var s = hoy.getSeconds();
+        if (m < 10) { m = "0" + m; }
+        if (s < 10) { s = "0" + s; }
+        document.getElementById('clock').innerHTML =
+            h + " : " + m + " : " + s;
+        var t = setTimeout(clock, 1000);
+    }
+    function fecha() {
+        var hoy = new Date();
+        var a = hoy.getFullYear();
+        var m = hoy.getMonth() + 1;
+        var d = hoy.getDate();
+        var h = hoy.getHours();
+        var min = hoy.getMinutes();
+        var s = hoy.getSeconds();
+        if (m < 10) { m = "0" + m; }
+        if (d < 10) { d = "0" + d; }
+        if (min < 10) { min = "0" + min; }
+        if (s < 10) { s = "0" + s; }
+        document.getElementById('fecha').innerHTML =
+            d + '/' + m + '/' + a + '-' + h + ":" + min + ":" + s;
+        var t = setTimeout(clock, 1000);
+    }
+</script>
+
+<body onload="clock(), fecha()">
+    <!-- HEADER CONTENT HERE -->
+    <header class="sticky-lg-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><i class="fa fa-hand-holding-usd"></i></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="/">Inicio</a>
+                        <a class="nav-link">|</a>
+                        <a class="nav-link active" href="/about">About</a>
+                        <a class="nav-link">|</a>
+                        <a class="nav-link active" href="/contact">Contacto</a>
+                    </div>
+                </div>
+                <div class="navbar-nav">
+                    <div class="nav-link active clock" id="clock"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT HERE -->
+
+    <%- defineContent('privado') %>
+        <main>
+            <div class="container">
+                <%- body %>
+            </div>
+        </main>
+
+        <!-- FOOTER CONTENT HERE -->
+        <footer>
+            Casa de divisas. &copy; 2021 Agustin Valdés Fuchs.
+        </footer>
+</body>
+
+</html>

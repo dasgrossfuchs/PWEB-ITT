@@ -1,0 +1,41 @@
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  padding-bottom: 3rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+  height: 3rem;
+  font-size: 14px;
+  color: #BBB;
+  background: #222;
+  text-align: center;
+}
+
+.clock {
+  background-color: #3f99ee79;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-family: monospace;
+}
+
+.cont-head {
+  background-color: #3168b9a2;
+  font-weight: bolder;
+  font-size: larger;
+  border-radius: 5px;
+  border: solid 3px #022752d5;
+}
+
+.switch img {
+  width: 50px;
+}

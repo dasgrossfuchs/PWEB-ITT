@@ -1,0 +1,53 @@
+<%- contentFor('privado') %>
+    <%- contentFor('body')%>
+        <script>
+            function upd(temp) {
+                var divisa = document.getElementById('left').placeholder;
+                if (divisa == "USD") {
+                    temp = temp * 19.92;
+                    document.getElementById('tipo').value = 'VENTA';
+                }
+                if (divisa == "MXN") {
+                    temp = temp * 0.05;
+                    document.getElementById('tipo').value = 'COMPRA';
+                }
+                temp = Math.round((temp + Number.EPSILON) * 100) / 100
+                document.getElementById('right').value = temp;
+            }
+        </script>
+        <div class="row pt-3">
+            <div class="col-3"></div>
+            <p class="col-6 text-center cont-head">
+                1 USD = 19.92 MXN <br>
+                1 MXN = 0.05 USD
+            </p>
+        </div>
+        <div class="container cont-body position-relative">
+            <div class="position-absolute start-50 translate-middle-x">
+                <div class="row">
+                    <form action="/" method="POST">
+                        <div class="text-center pb-3">
+                            <%- state.btnSw%>
+                        </div><br>
+                    </form>
+                    <form action="/reporte" method="POST">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-dollar-sign"></i></span>
+                            <input type="number" class="form-control" id="left" name=<%-state.L%>
+                            oninput="upd(this.value),this.setCustomValidity('')" required placeholder=<%-state.L%>
+                                <%-state.chk%>>
+                                    <span class="input-group-text"><i class="fa fa-arrow-right"></i></span>
+                                    <span class="input-group-text"><i class="fa fa-dollar-sign"></i></span>
+                                    <input type="number" class="form-control" id="right" placeholder=<%-state.R%>
+                                    disabled>
+                                    <input type="hidden" name="tipoCambio" id="tipo" onload="tipo()">
+                        </div>
+                        <div class="text-center pt-3">
+                            <button class="btn btn-primary" type="submit" onsubmit="sbm()">
+                                <%-state.btnSnd %>
+                            </button>
+                        </div><br>
+                    </form>
+                </div>
+            </div>
+        </div>

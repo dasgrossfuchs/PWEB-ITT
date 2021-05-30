@@ -3,3 +3,7 @@ npm init -y
 npm install express body-parser
 npm install express-ejs-layouts
     instalacion de paquetes express 
+npm install nodemon
+
+>> package.json
+"scripts" : {"start": "nodemon index.js"} << Agregar esto en scripts, separar con comas.

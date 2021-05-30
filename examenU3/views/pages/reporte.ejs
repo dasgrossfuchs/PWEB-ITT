@@ -1,0 +1,12 @@
+<%- contentFor('privado') %>
+    <%- contentFor('body')%>
+        <div class="align-self-center">
+            <p class="h2 text-center" onload="fecha()">Reporte de transacción</p>
+        </div>
+        <span id="fecha">xc</span>
+
+        <form class="text-center" action="/" method="GET">
+            <button class="btn btn-secondary" type="submit" onsubmit="sbm()">
+                Realizar otra transacción
+            </button>
+        </form>

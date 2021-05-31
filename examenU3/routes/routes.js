@@ -55,11 +55,15 @@ router.post('/ticket', (req, res) => {
     var total = funciones.procesar(req.body,TC,movimientos);
     movimientos.mxn = parseFloat(total.mxn);
     movimientos.usd = parseFloat(total.usd);
+    
     var temp = (parseFloat(caja.mxnDIA) + parseFloat(movimientos.mxn));
     if ((temp % 1) == 0) temp = temp + '.00';
+    temp = Math.round((temp + Number.EPSILON) * 100) / 100;
     caja.mxnCIERRE = temp;
+
     var temp = (parseFloat(caja.usdDIA) + parseFloat(movimientos.usd));
     if ((temp % 1) == 0) temp = temp + '.00';
+    temp = Math.round((temp + Number.EPSILON) * 100) / 100;
     caja.usdCIERRE = temp; 
     var transaccion = total.trans;
     res.render('pages/ticket', { title: "Ticket de transacción", valores : transaccion });

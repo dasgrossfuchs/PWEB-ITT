@@ -8,15 +8,13 @@ function procesar(vals, TC,movimientos) {
     var pedido = vals.PEDIDO;
     var total = 0.00;
     var cambio = 0.00;
-    var mxn = 0;
-    var usd = 0;
     if(tipo == 'COMPRA'){
         total = (pedido) * TC.compra;
         total = Math.round((total + Number.EPSILON) * 100) / 100;
         cambio = (recibo - pedido);
         cambio = Math.round((cambio + Number.EPSILON) * 100) / 100;
-        var mxn =  parseFloat(movimientos.mxn) - parseFloat(total);
-        var usd =  parseFloat(movimientos.usd) + parseFloat(pedido);
+        var mxn =  parseFloat(movimientos.mxn) + parseFloat(pedido);
+        var usd =  parseFloat(movimientos.usd) - parseFloat(total);
         if ((recibo % 1) == 0) recibo = recibo + '.00';
         if ((pedido % 1) == 0) pedido = pedido + '.00';
         if ((cambio % 1) == 0) cambio = cambio + '.00';

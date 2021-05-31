@@ -1,53 +1,104 @@
 <%- contentFor('privado') %>
     <%- contentFor('body')%>
         <script>
-            function upd(temp) {
-                var divisa = document.getElementById('left').placeholder;
+            function upd() {
+                var compra = document.getElementById('compra').value;
+                var venta = document.getElementById('venta').value;
+                var pedido = 0.00;
+                var recibo = 0.00;
+                var total = 0.00;
+                var cambio = 0.00;
+                var divisa = document.getElementById('pedido').placeholder;
+                pedido = document.getElementById('pedido').value;
+                recibo = document.getElementById('recibo').value;
+                document.getElementById('recibo').min = recibo;
+                document.getElementById('recibo').setCustomValidity('Cantidad insuficiente');
                 if (divisa == "USD") {
-                    temp = temp * 19.92;
+                    total = (pedido) * venta;
+                    total = Math.round((total + Number.EPSILON) * 100) / 100;
+                    cambio = (recibo - pedido);
+                    cambio = Math.round((cambio + Number.EPSILON) * 100) / 100;
                     document.getElementById('tipo').value = 'VENTA';
                 }
                 if (divisa == "MXN") {
-                    temp = temp * 0.05;
+                    total = (pedido) * compra;
+                    total = Math.round((total + Number.EPSILON) * 100) / 100;
+                    cambio = (recibo - pedido);
+                    cambio = Math.round((cambio + Number.EPSILON) * 100) / 100;
                     document.getElementById('tipo').value = 'COMPRA';
                 }
-                temp = Math.round((temp + Number.EPSILON) * 100) / 100
-                document.getElementById('right').value = temp;
+                if (cambio < 0) { document.getElementById('cambio').style = "color:red;"; }
+                else { document.getElementById('cambio').style = "color:default;"; }
+                if ((cambio % 1) == 0) cambio = cambio + '.00';
+                if ((total % 1) == 0) total = total + '.00';
+                document.getElementById('cambio').value = cambio;
+                document.getElementById('total').value = total;
             }
         </script>
         <div class="row pt-3">
             <div class="col-3"></div>
-            <p class="col-6 text-center cont-head">
-                1 USD = 19.92 MXN <br>
-                1 MXN = 0.05 USD
-            </p>
+            <div class="col-6">
+                <p class="text-center cont-head">
+                    VENTA 1 USD = <%=TC.venta%> MXN <br>
+                        COMPRA 1 MXN = <%=TC.compra%> USD
+                </p>
+                <hr>
+            </div>
         </div>
         <div class="container cont-body position-relative">
             <div class="position-absolute start-50 translate-middle-x">
                 <div class="row">
-                    <form action="/" method="POST">
+                    <form action="/compraventa" method="POST">
                         <div class="text-center pb-3">
-                            <%- state.btnSw%>
+                            <%-state.btnSw%>
                         </div><br>
                     </form>
-                    <form action="/reporte" method="POST">
+                    <form action="/ticket" method="POST">
                         <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fa fa-dollar-sign"></i></span>
-                            <input type="number" class="form-control" id="left" name=<%-state.L%>
-                            oninput="upd(this.value),this.setCustomValidity('')" required placeholder=<%-state.L%>
-                                <%-state.chk%>>
-                                    <span class="input-group-text"><i class="fa fa-arrow-right"></i></span>
-                                    <span class="input-group-text"><i class="fa fa-dollar-sign"></i></span>
-                                    <input type="number" class="form-control" id="right" placeholder=<%-state.R%>
-                                    disabled>
-                                    <input type="hidden" name="tipoCambio" id="tipo" onload="tipo()">
+                            <span class="input-group-text"><b>PEDIDO</b></span>
+                            <input type="number" class="form-control" id="pedido" name='PEDIDO'
+                                oninput="upd(),this.setCustomValidity('')" step="0.01" required
+                                placeholder="<%=state.L%>">
+                            <span class="input-group-text">
+                                <%=state.L%>
+                            </span>
+                            <span class="input-group-text"><b>RECIBO</b></span>
+                            <input type="number" class="form-control" id="recibo" name='RECIBIDO'
+                                oninput="upd(),this.setCustomValidity('')" step="0.01" required
+                                placeholder="<%=state.L%>">
+                            <span class="input-group-text">
+                                <%=state.L%>
+                            </span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><b>TOTAL</b></span>
+                            <input type="number" class="form-control" id="total" placeholder="<%=state.R%>" disabled>
+                            <span class="input-group-text">
+                                <%=state.R%>
+                            </span>
+                            <span class="input-group-text"><b>CAMBIO</b></span>
+                            <input type="number" class="form-control" id="cambio" placeholder="<%=state.L%>" disabled>
+                            <span class="input-group-text">
+                                <%=state.L%>
+                            </span>
+                            <input type="hidden" name="tipoCambio" id="tipo">
                         </div>
                         <div class="text-center pt-3">
-                            <button class="btn btn-primary" type="submit" onsubmit="sbm()">
-                                <%-state.btnSnd %>
+                            <button class="btn btn-success" type="submit">
+                                <%=state.btnSnd %>
                             </button>
                         </div><br>
                     </form>
+                    <hr>
+                    <p class="text-center cont-head">CAJA ACTUAL</p> <br>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><b>USD</b></span>
+                        <input type="text" class="form-control" disabled value="<%=caja.usdCIERRE%>">
+                        <span class="input-group-text"><b>MXN</b></span>
+                        <input type="text" class="form-control" disabled value="<%=caja.mxnCIERRE%>">
+                    </div>
                 </div>
             </div>
         </div>
+        <input type="hidden" id="venta" value="<%=TC.venta%>">
+        <input type="hidden" id="compra" value="<%=TC.compra%>">

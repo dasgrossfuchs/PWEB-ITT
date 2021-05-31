@@ -1,0 +1,38 @@
+<%- contentFor('privado') %>
+    <%- contentFor('body')%>
+        <div class="align-self-center">
+            <p class="h2 text-center">Ticket de transacción</p>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <p class="text-center">
+                    <b>FECHA: </b><span id="fecha"></span>
+                    <b>HORA: </b><span id="hora"></span>
+                </p>
+                <hr>
+                <p>
+                    <b>TIPO DE TRANSACCIÓN: </b>
+                    <%- valores.tipo%>
+                </p>
+                <p>
+                    <b>PEDIDO: </b>
+                    <%- valores.pedido%>
+                        <b>TOTAL: </b>
+                        <%- valores.total%>
+                </p>
+                <p>
+                    <b>RECIBIDO: </b>
+                    <%-valores.recibo%>
+                        <b>CAMBIO: </b>
+                        <%- valores.cambio%>
+                </p>
+                <hr>
+            </div>
+        </div>
+
+        <form class="text-center" action="/compraventa" method="GET">
+            <button class="btn btn-secondary" type="submit">
+                NUEVA TRANSACCIÓN
+            </button>
+        </form>

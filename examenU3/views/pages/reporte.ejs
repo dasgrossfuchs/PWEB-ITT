@@ -1,12 +1,52 @@
 <%- contentFor('privado') %>
     <%- contentFor('body')%>
         <div class="align-self-center">
-            <p class="h2 text-center" onload="fecha()">Reporte de transacción</p>
+            <p class="h2 text-center">Reporte de estado de caja</p>
         </div>
-        <span id="fecha">xc</span>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <p class="text-center">
+                    <b>FECHA: </b><span id="fecha"></span>
+                    <b>HORA: </b><span id="hora"></span>
+                </p>
+                <hr>
+                <p class="text-center">
+                    <b>ESTADO INICIAL</b>
+                </p>
+                <p class="text-center">
+                    <b>USD: </b>
+                    <%- caja.usdDIA%>
+                        /
+                        <b>MXN: </b>
+                        <%- caja.mxnDIA%>
+                </p>
+                <p class="text-center">
+                    <b>ESTADO ACTUAL</b>
+                </p>
+                <p class="text-center">
+                    <b>USD: </b>
+                    <%- caja.usdCIERRE%>
+                        /
+                        <b>MXN: </b>
+                        <%- caja.mxnCIERRE%>
+                </p>
+                <hr>
+                <p class="text-center">
+                    <b>MOVIMIENTOS DEL DIA</b>
+                </p>
+                <p class="text-center">
+                    <b>USD: </b>
+                    <%- movimientos.usd%>
+                        /
+                        <b>MXN: </b>
+                        <%- movimientos.mxn%>
+                </p>
+            </div>
+        </div>
 
-        <form class="text-center" action="/" method="GET">
-            <button class="btn btn-secondary" type="submit" onsubmit="sbm()">
-                Realizar otra transacción
+        <form class="text-center" action="/compraventa" method="GET">
+            <button class="btn btn-secondary" type="submit">
+                NUEVA TRANSACCIÓN
             </button>
         </form>

@@ -39,3 +39,8 @@ footer {
 .switch img {
   width: 50px;
 }
+
+.btnSld {
+  height: 50px;
+  font-size: smaller;
+}

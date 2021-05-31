@@ -1,0 +1,42 @@
+<%- contentFor('privado') %>
+    <%- contentFor('body')%>
+        <form action="/compraventa" method="POST">
+            <div class="container row pt-3">
+                <div class="col-2"></div>
+                <div class="col-8">
+
+                    <p class="text-center cont-head">ESTADO INICIAL DE LA CAJA</p> <br>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><b>USD</b></span>
+                        <input type="text" class="form-control" name="usdCaja" value="<%=caja.usdDIA%>">
+                        <span class="input-group-text"><b>MXN</b></span>
+                        <input type="text" class="form-control" name="mxnCaja" value="<%=caja.mxnDIA%>">
+                    </div>
+                    <hr>
+                    <p class="text-center cont-head">TIPO DE CAMBIO</p> <br>
+                    <b>COMPRA</b>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><b>MXN</b></span>
+                        <input type="text" class="form-control" disabled value="1">
+                        <span class="input-group-text"><b>=</b></span>
+                        <span class="input-group-text"><b>USD</b></span>
+                        <input type="text" class="form-control" name="compraTc" value="<%=TC.compra%>">
+                    </div>
+                    <b>VENTA</b>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><b>USD</b></span>
+                        <input type="text" class="form-control" disabled value="1">
+                        <span class="input-group-text"><b>=</b></span>
+                        <span class="input-group-text"><b>MXN</b></span>
+                        <input type="text" class="form-control" name="ventaTc" value="<%=TC.venta%>">
+                    </div>
+                    <hr>
+                    <div class="text-center pt-3">
+                        <button class="btn btn-success  btnSld" name="save" type="submit">GUARDAR CONFIGURACIÓN</button>
+                        <button class="btn btn-danger btnSld" name="reset" type="submit">GUARDAR CONFIGURACIÓN <br> Y
+                            RESTABLECER MOVIMIENTOS</button>
+                        <button class="btn btn-secondary btnSld" type="submit">SALIR SIN GUARDAR</button>
+                    </div><br>
+                </div>
+            </div>
+        </form>

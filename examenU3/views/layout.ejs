@@ -36,8 +36,9 @@
         if (min < 10) { min = "0" + min; }
         if (s < 10) { s = "0" + s; }
         document.getElementById('fecha').innerHTML =
-            d + '/' + m + '/' + a + '-' + h + ":" + min + ":" + s;
-        var t = setTimeout(clock, 1000);
+            d + '/' + m + '/' + a;
+        document.getElementById('hora').innerHTML =
+            h + ":" + min + ":" + s;
     }
 </script>
 
@@ -46,7 +47,7 @@
     <header class="sticky-lg-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><i class="fa fa-hand-holding-usd"></i></a>
+                <a class="navbar-brand" href="/compraventa"><i class="fa fa-hand-holding-usd"></i></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -54,11 +55,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" href="/">Inicio</a>
+                        <a class="nav-link active" href="/compraventa">INICIO</a>
                         <a class="nav-link">|</a>
-                        <a class="nav-link active" href="/about">About</a>
+                        <a class="nav-link active" href="/reporte">REPORTE</a>
                         <a class="nav-link">|</a>
-                        <a class="nav-link active" href="/contact">Contacto</a>
+                        <a class="nav-link active" href="/">CAMBIAR CONFIGURACIÓN</a>
                     </div>
                 </div>
                 <div class="navbar-nav">

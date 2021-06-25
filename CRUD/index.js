@@ -7,6 +7,8 @@ const config = require('./config');
 const hbs = require('express-handlebars');
 const app = express();
 const router = require('./routes/router');//router out app
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
